@@ -1,5 +1,6 @@
 /* Core */
 import { createLogger } from 'redux-logger'
+import { apiDogsSlice } from '../../app/features/dogs/dogsApiSlice'
 
 const middleware = [
   createLogger({
@@ -15,6 +16,7 @@ const middleware = [
     },
     predicate: () => typeof window !== 'undefined',
   }),
+  apiDogsSlice.middleware,
 ]
 
 export { middleware }
